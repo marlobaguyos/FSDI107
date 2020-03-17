@@ -1,7 +1,11 @@
-console.log('Hello World!');
+function init() {
+    console.log('Hello World!');
 
-let age = 90;
-console.log(age);
+    let age = 90;
+    console.log(age);
 
-let name = "Sergio Inzunza";
-console.log("My name is: " + name);
+    let name = "Sergio Inzunza";
+    console.log("My name is: " + name);
+}
+
+init();
