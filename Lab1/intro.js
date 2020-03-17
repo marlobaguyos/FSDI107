@@ -1,3 +1,5 @@
+var mathLib = require('./myMath');
+
 function init() {
     console.log('Hello World!');
 
