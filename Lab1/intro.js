@@ -17,6 +17,10 @@ function init() {
     console.log(greater);
 
     console.log(mathLib.greater(-1, -2));
+
+    console.log("Is even: " + mathLib.isEven(42));
+    console.log("Is even: " + mathLib.isEven(333));
+    console.log("Is even: " + mathLib.isEven(0));
 }
 
 init();
