@@ -1,5 +1,5 @@
 module.exports = {
-    sayHello: function() {
-        console.log('Hello there!');
+    sayHello: function(text) {
+        console.log('Hello there! ' + text);
     }
 };
