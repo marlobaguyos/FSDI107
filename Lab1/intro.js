@@ -8,6 +8,8 @@ function init() {
 
     let name = "Sergio Inzunza";
     console.log("My name is: " + name);
+
+    mathLib.sayHello(); // exec the fn on the module
 }
 
 init();
