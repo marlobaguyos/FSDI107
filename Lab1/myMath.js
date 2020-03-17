@@ -14,11 +14,10 @@ module.exports = {
         return num2;
     },
     isEven: function(num) {
-        return num % 2 === 0;
-        
-        // if(num % 2 === 0){
-        //     return true;
-        // }
-        // return false;
+        // return num % 2 === 0;
+        if(num % 2 === 0){
+            return true;
+        }
+        return false;
     }
 }

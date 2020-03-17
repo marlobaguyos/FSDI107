@@ -1,5 +1,15 @@
 var mathLib = require('./myMath');
 
+function homework() {
+    //print the first 20 even numbers
+    for (i = 0; i < 40; i++) {
+        if(i % 2 === 0){
+            console.log(i);
+        }
+    }
+}
+
+/*
 function init() {
     console.log('Hello World!');
 
@@ -24,3 +34,5 @@ function init() {
 }
 
 init();
+*/
+homework();
