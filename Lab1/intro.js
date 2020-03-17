@@ -10,6 +10,8 @@ function init() {
     console.log("My name is: " + name);
 
     mathLib.sayHello("a parameter val"); // exec the fn on the module
+    var res = mathLib.sum(21, 21);
+    console.log(res);
 }
 
 init();
