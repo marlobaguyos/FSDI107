@@ -48,11 +48,18 @@ app.get("/about", function(req, res){
     });
 
     app.post('/api/items', function(req, res){
-        var item = req.body;
-        var itemForMongo = ItemDB(item);
-        itemForMongo.save();
-
-        res.json(item);
+        var itemForMongo = ItemDB(req.body);
+        itemForMongo.save(function(error, savedItem){
+            if(error){
+                console.log("Error saving object ", error);
+                res.status(500); //http status 500: Internal Server Error
+                res.send(error);
+            }
+            //No error
+            console.log("Object saved!!");
+            res.status(201); //201: Created
+            res.json(savedItem);
+        });
     });
 
 /** Start the server and DB check connection */
