@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/6383e8bf-4f81-4744-9499-6339051232ed/resourceGroups/Testing_nodejs/providers/Microsoft.Web/sites/elinodejs",
-    "appService.deploySubpath": ""
-}
