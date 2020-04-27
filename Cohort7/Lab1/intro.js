@@ -20,6 +20,8 @@ console.log(g);
 console.log(mathLib.greater(-1, -1));
 
 console.log(mathLib.isEven(4));
+
+console.log(mathLib.min(5, 2));
 }
 
 init();
