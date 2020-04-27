@@ -18,17 +18,17 @@ function init() {
 
 // mathLib.sayHello("a parameter value"); // exec the fn on the module
 
-// var res = mathLib.sum(21,21);
-// console.log(res);
+var res = mathLib.sum(21,21);
+console.log(res);
 
-// var g=mathLib.greater(897123, 89123);
-// console.log(g);
+var g=mathLib.greater(897123, 89123);
+console.log(g);
 
-// console.log(mathLib.greater(-1, -1));
+console.log(mathLib.greater(-1, -1));
 
-// console.log(mathLib.isEven(10));
+console.log(mathLib.isEven(10));
 
-// console.log(mathLib.min(5, 2));
+console.log(mathLib.min(5, 2));
 
 homework();
 }
