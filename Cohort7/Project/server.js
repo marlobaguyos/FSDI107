@@ -7,7 +7,8 @@ var express = require('express');
 ********************************************************/
 var app = express();
 
-
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 
 /*******************************************************
@@ -30,8 +31,23 @@ app.listen(8080, function() {
 /*******************************************************
  *  API functionality
 ********************************************************/
+var catalog = [];
+
+
 
 app.get('/API/catalog', function(req, res){
     var data = [];
     res.json(data);
 })
+
+app.post('/api/item', function(req, res){
+    console.log(' Admin wants to save an item')
+
+    var item = req.body;
+    console.log(item);
+
+    item.id = catalog.length + 1;
+    catalog.push(item);
+
+    res.json(item);
+});
