@@ -43,19 +43,12 @@ app.listen(8080, function () {
  ********************************************************/
 var catalog = [];
 
-
-
-app.get('/API/catalog', function (req, res) {
-    var data = [];
-    res.json(data);
+app.get('/api/catalog', function (req, res) {
+    res.json(catalog);
 })
 
-app.post('/api/item', function (req, res) {
-    console.log(' Admin wants to save an item')
-
+app.post('/api/items', function (req, res) {
     var item = req.body;
-    console.log(item);
-
     item.id = catalog.length + 1;
     catalog.push(item);
 
