@@ -19,6 +19,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+//Db connection settings
+var mongoose = require('mongoose');
+mongoose.connect('');
+var db = mongoose.connection;
 
 
 /*******************************************************
