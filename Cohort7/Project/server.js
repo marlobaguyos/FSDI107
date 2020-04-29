@@ -44,8 +44,8 @@ app.listen(8080, function () {
 var catalog = [];
 
 app.get('/api/catalog', function (req, res) {
-    var data = []
-    res.json(data);
+    // var data = []
+    res.json(catalog);
 })
 
 app.post('/api/items', function (req, res) {
