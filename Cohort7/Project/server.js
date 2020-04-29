@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
 
 //Db connection settings
 var mongoose = require('mongoose');
-mongoose.connect('');
+mongoose.connect('mongodb://ThiIsAPassword:TheRealPassword@cluster0-shard-00-00-euadh.mongodb.net:27017,cluster0-shard-00-01-euadh.mongodb.net:27017,cluster0-shard-00-02-euadh.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 var db = mongoose.connection;
 
 
@@ -36,10 +36,6 @@ app.get('/', function (req, res) {
 
 app.get('/about', function (req, res) {
     res.send("I'm Marlo Baguyos");
-});
-
-app.listen(8080, function () {
-    console.log("Server running at localhost:8080");
 });
 
 /*******************************************************
@@ -60,3 +56,17 @@ app.post('/api/items', function (req, res) {
     res.json(item);
 });
 
+/** Start the server and DB connection */
+
+db.on('open', function(){
+    console.log('Yeeei, connected to DB');
+});
+
+db.on('error', function(details){
+    console.log('Error: DB connection error')
+    console.log("Error details: " + details);
+});
+
+app.listen(8080, function () {
+    console.log("Server running at localhost:8080");
+});
