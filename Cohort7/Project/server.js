@@ -56,14 +56,3 @@ app.post('/api/items', function (req, res) {
     res.json(item);
 });
 
-// app.delete('/api/items', function (req, res){
-//     if (!req.body.id) {
-//         res.status(409);
-//         res.send("Missing id attribute in the received object");
-//     }
-
-//     var t = req.body.id;
-//     for(var i = 0; i < catalog.length; i++){
-
-//     }
-// })
