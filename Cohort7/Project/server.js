@@ -46,7 +46,7 @@ var catalog = [];
 app.get('/api/catalog', function (req, res) {
     // var data = []
     res.json(catalog);
-})
+});
 
 app.post('/api/items', function (req, res) {
     var item = req.body;
