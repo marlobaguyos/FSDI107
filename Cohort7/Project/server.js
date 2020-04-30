@@ -19,6 +19,15 @@ app.use(function (req, res, next) {
     next();
 });
 
+
+// to serve HTML
+var ejs = require('ejs');
+console.log(__dirname);
+app.set('views', __dirname + '/public'); // the folder that contains HTML files
+app.engine('html', ejs.renderFile);
+app.set('view engine', ejs)
+
+
 //Db connection settings
 var mongoose = require('mongoose');
 const {
@@ -33,8 +42,7 @@ var db = mongoose.connection;
  ********************************************************/
 
 app.get('/', function (req, res) {
-    console.log("Req on root page");
-    res.send("<h1 style='color:red;'>Hello World!</h1>");
+    res.render('Catalog.html');
 });
 
 app.get('/about', function (req, res) {

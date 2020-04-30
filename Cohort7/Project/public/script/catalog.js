@@ -100,6 +100,7 @@ function displayItems(product) {
                         <li>${product.category}</li>
                     </ul>
                 <button type="button" class="mb-2 btn btn-lg btn-block btn-outline-primary">Buy</button>
+                <button type="button" class="mb-2 btn btn-lg btn-block btn-outline-primary">Delete</button>
                 </div>
             </div>
         </div>`;
