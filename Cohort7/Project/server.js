@@ -130,7 +130,7 @@ db.on('open', function () {
     });
 
     //create obj constructor
-    ItemDB = mongoose.model('itemsCH7', itemSchema);
+    ItemDB = mongoose.model('MarloitemsCH7', itemSchema);
 });
 
 db.on('error', function (details) {
