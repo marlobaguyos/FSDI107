@@ -53,7 +53,17 @@ app.get('/api/catalog', function (req, res) {
 app.post('/api/items', function (req, res) {
     var itemForMongo = ItemDB(req.body);
     itemForMongo.save(function(error, savedItem){
-        
+        if(error){
+            console.log("Error saving object", error);
+            res.status(500); // http status 500: Internal Server Error
+            res.send(error);
+        }
+
+        // No Error
+        console.log("Object saved!");
+        res.status(201); // 201: Created
+        res.json(savedItem);
+
     });
     // item.id = catalog.length + 1;
     // catalog.push(item);
