@@ -64,7 +64,33 @@ app.get('/api/items', function (req, res) {
 
 app.get('/api/items/:name', function(req, res){
     var name = req.params.name;
-    res.send(name);
+    ItemDB.find({user: name}, function(error, data){
+        if(error){
+            console.log("Error reading items");
+            res.status(500);
+            res.send(error);
+        }
+
+        // no error
+        res.status(200);
+        res.json(data);
+    });
+});
+
+app.get('/api/items/priceLowerThan/:price', function(req, res){
+    var val = req.params.price;
+    ItemDB.find({price: {$lte: val}}, function(error, data){
+        if(error){
+            console.log("Error reading items");
+            res.status(500);
+            res.send(error);
+        }
+
+        // no error
+
+        res.status(200);
+        res.json(data);
+    })
 });
 
 app.post('/api/items', function (req, res) {
