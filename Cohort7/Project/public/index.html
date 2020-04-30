@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/catalog.css">
+    <title>Index</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm p-3 px-md-4 mb-3">
+        <a class="navbar-brand" href="#">Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Catalog<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">admin</a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Catalogs" aria-label="Search"
+                    id="search-txt">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Live Life. Explore!</h1>
+            <p class="lead">Every great accomplishment in life is traceable to certain nuggets that make things work. It
+                is
+                the application of these nuggets that determine one’s success in life</p>
+        </div>
+
+        <div class="container-fluid card-deck mb-2 bg-dark mainDiv" id="catalog">
+            
+        </div>
+
+        <!-- <div class="container-xl">
+            <div class="row">
+                <div class="col">
+                    <div id="catalog" class="catalog-container">
+                    
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div> -->
+    </div>
+
+    <footer class="my-0 pt-4 text-muted text-center text-small bg-light">
+        <img src="/img/Lapulapu.png" width="200" alt="log0">
+        <p class="mb-1">© 2020 JackAmmo</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Feedback</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+
+    <script src="script/jquery-1.12.0.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/catalog.js"></script>
+</body>
+
+</html>
