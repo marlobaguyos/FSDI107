@@ -48,11 +48,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/admin', (req, res) => {
-    res.render('admin.html');
+    res.render('Admin.html');
 });
 
 app.get('/about', function (req, res) {
-    res.send("I'm Marlo Baguyos");
+    /*
+        Render some html page (name, )
+        when the user visits /about
+    */
+    res.render('about.html');
 });
 
 /*******************************************************
