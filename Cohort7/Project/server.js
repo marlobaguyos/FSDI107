@@ -47,6 +47,10 @@ app.get('/', function (req, res) {
     res.render('Catalog.html');
 });
 
+app.get('/admin', (req, res) => {
+    res.render('admin.html');
+});
+
 app.get('/about', function (req, res) {
     res.send("I'm Marlo Baguyos");
 });
