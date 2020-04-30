@@ -21,7 +21,9 @@ app.use(function (req, res, next) {
 
 //Db connection settings
 var mongoose = require('mongoose');
-const { mongo } = require('mongoose');
+const {
+    mongo
+} = require('mongoose');
 mongoose.connect('mongodb://ThiIsAPassword:TheRealPassword@cluster0-shard-00-00-euadh.mongodb.net:27017,cluster0-shard-00-01-euadh.mongodb.net:27017,cluster0-shard-00-02-euadh.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 var db = mongoose.connection;
 
@@ -42,18 +44,28 @@ app.get('/about', function (req, res) {
 /*******************************************************
  *  API functionality
  ********************************************************/
-var catalog = [];
+
 var ItemDB; //This is model for DB items
 
 app.get('/api/catalog', function (req, res) {
-    // var data = []
-    res.json(catalog);
+    ItemDB.find({}, function(error, data){
+        if(error){
+            console.log("Error reading items");
+            res.status(500);
+            res.send(error);
+        }
+
+        // no error
+        res.status(200);
+        res.json(data);
+        
+    })
 });
 
 app.post('/api/items', function (req, res) {
     var itemForMongo = ItemDB(req.body);
-    itemForMongo.save(function(error, savedItem){
-        if(error){
+    itemForMongo.save(function (error, savedItem) {
+        if (error) {
             console.log("Error saving object", error);
             res.status(500); // http status 500: Internal Server Error
             res.send(error);
@@ -68,12 +80,12 @@ app.post('/api/items', function (req, res) {
     // item.id = catalog.length + 1;
     // catalog.push(item);
 
-    res.json(item);
+    // res.json(item);
 });
 
 /** Start the server and DB connection */
 
-db.on('open', function(){
+db.on('open', function () {
     console.log('Yeeei, connected to DB');
 
     var itemSchema = mongoose.Schema({
@@ -90,7 +102,7 @@ db.on('open', function(){
     ItemDB = mongoose.model('itemsCH7', itemSchema);
 });
 
-db.on('error', function(details){
+db.on('error', function (details) {
     console.log('Error: DB connection error')
     console.log("Error details: " + details);
 });
