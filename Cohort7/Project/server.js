@@ -27,6 +27,8 @@ app.set('views', __dirname + '/public'); // the folder that contains HTML files
 app.engine('html', ejs.renderFile);
 app.set('view engine', ejs)
 
+// to server static files
+app.use(express.static(__dirname + '/public')) // serve ***all files from this location
 
 //Db connection settings
 var mongoose = require('mongoose');
