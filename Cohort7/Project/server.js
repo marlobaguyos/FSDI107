@@ -47,7 +47,7 @@ app.get('/about', function (req, res) {
 
 var ItemDB; //This is model for DB items
 
-app.get('/api/catalog', function (req, res) {
+app.get('/api/items', function (req, res) {
     ItemDB.find({}, function(error, data){
         if(error){
             console.log("Error reading items");
@@ -59,7 +59,12 @@ app.get('/api/catalog', function (req, res) {
         res.status(200);
         res.json(data);
         
-    })
+    });
+});
+
+app.get('/api/items/:name', function(req, res){
+    var name = req.params.name;
+    res.send(name);
 });
 
 app.post('/api/items', function (req, res) {
